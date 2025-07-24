@@ -1,0 +1,34 @@
+:root {
+  --main-dark: #0b0a07ff;
+  --dark-mid: #40434D;
+  --main-mid: #747c92ff;
+  --light-mid: #B3BAC0;
+  --main-light: #f1f7edff;
+  --accent-main: #e71d36ff;
+  --accent-secondary: #db3a34ff;
+  
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.dark-mode {
+  color: var(--main-light);
+  background-color: var(--main-dark);
+  accent-color: var(--light-mid);
+}
+
+.light-mode {
+  color: var(--main-dark);
+  background-color: var(--main-light);
+  accent-color: var(--dark-mid);
+}
+
+body {
+  padding: 10px;
+  font-family: sans-serif;
+  background-color: var(--main-dark);
+}
