@@ -3,35 +3,28 @@ import { ReactiveVar } from 'meteor/reactive-var';
 
 import './App.html';
 import './videos.html';
-import { Meteor } from 'meteor/meteor';
 
-Template.themeSwitcher.onCreated(function themeSwitcherOnCreated() {
-  // Initialize the theme variable
+Template.mainContainer.onCreated(function helloOnCreated() {
   this.theme = new ReactiveVar('.light-mode');
-  
 });
 
-Template.themeSwitcher.helpers({
+Template.mainContainer.helpers({
   theme() {
     return Template.instance().theme.get();
   },
-});
-
-Template.hello.onCreated(function helloOnCreated() {
-  // counter starts at 0
-  this.counter = new ReactiveVar(0);
-});
-
-Template.hello.helpers({
-  counter() {
-    return Template.instance().counter.get();
+    videoUrl() {
+    const instance = Template.instance
   },
 });
 
-Template.hello.events({
-  'click button'(event, instance) {
-    // increment the counter when button is clicked
-    instance.counter.set(instance.counter.get() + 1);
-    Meteor.Warn(theme);
+Template.mainContainer.events({
+  'click .theme-toggle'(event, instance) {
+    // Toggle the theme between light and dark
+    const currentTheme = instance.theme.get();
+    if (currentTheme === '.light-mode') {
+      instance.theme.set('.dark-mode');
+    } else {
+      instance.theme.set('.light-mode');
+    }
   },
 });
