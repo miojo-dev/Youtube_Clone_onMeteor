@@ -1,3 +1,15 @@
-<template name="mainContainer">
-    asdasd
+<template name="app">
+    <header>
+        <h1>
+            CloneTube
+        </h1>
+        {{> addVideo}}
+    </header>
+    <main>
+        <ul>
+            {{#each vid}}
+                {{> videoList}}
+            {{/each}}
+        </ul>
+    </main>
 </template>

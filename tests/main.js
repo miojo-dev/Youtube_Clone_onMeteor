@@ -1,9 +1,9 @@
 import assert from "assert";
 
-describe("CloneTube", function () {
+describe("simple-todos-blaze", function () {
   it("package.json has correct name", async function () {
     const { name } = await import("../package.json");
-    assert.strictEqual(name, "CloneTube");
+    assert.strictEqual(name, "simple-todos-blaze");
   });
 
   if (Meteor.isClient) {

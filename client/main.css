@@ -1,48 +1,32 @@
 :root {
   --main-dark: #0b0a07ff;
-  --dark-mid: #40434D;
-  --main-mid: #747c92ff;
-  --light-mid: #B3BAC0;
+  --secondary-dark: #40434dff;
+  --accent-dark: #e71d36ff;
   --main-light: #f1f7edff;
-  --accent-main: #e71d36ff;
-  --accent-secondary: #db3a34ff;
+  --accent-light: #db3a34ff;
 
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.dark-mode {
-  color: var(--main-light);
-  background-color: var(--main-dark);
-  accent-color: var(--light-mid);
-}
-
-.light-mode {
-  color: var(--main-dark);
-  background-color: var(--main-light);
-  accent-color: var(--dark-mid);
 }
 
 body {
-  padding: 10px;
-  font-family: sans-serif;
+  background-color: var(--main-dark);
+  accent-color: var(--accent-dark);
+  color: var(--main-light);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  position: sticky;
-  top: 100%;
+/*.light-mode {
+  background-color: var(--main-light);
+  color: var(--mid-grey);
+  accent-color: var(--accent-light);
 }
 
+.dark-mode{
+  background-color: var(--main-dark);
+  color: var(--mid-grey);
+  accent-color: var(--accent-dark);
+}
 
-/*Slider Theme*/
+Toggle switch
 .switch {
   position: relative;
   display: inline-block;
@@ -63,7 +47,7 @@ header {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: var(--mid-tone);
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -75,17 +59,17 @@ header {
   width: 26px;
   left: 4px;
   bottom: 4px;
-  background-color: white;
+  background-color: var(--main);
   -webkit-transition: .4s;
   transition: .4s;
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: var(--mid-tone);
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px var(--mid-grey);
 }
 
 input:checked + .slider:before {
@@ -94,11 +78,11 @@ input:checked + .slider:before {
   transform: translateX(26px);
 }
 
-/* Rounded sliders */
+Rounded sliders
 .slider.round {
   border-radius: 34px;
 }
 
 .slider.round:before {
   border-radius: 50%;
-}
+}*/

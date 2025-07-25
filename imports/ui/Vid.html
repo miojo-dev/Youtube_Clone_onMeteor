@@ -1,0 +1,31 @@
+<template name="addVideo">
+    <form action="">
+        <input type="text" placeholder="Insert your link/URL here" required>
+        <input type="text" placeholder="Insert the title" required>
+        <input type="text" placeholder="Insert the description" required>
+        <button type="submit" class="submit">
+            <img src="../assets/youtube_activity_64dp_E71D36FF_FILL0_wght400_GRAD0_opsz48.png" alt="Add Video">
+        </button>
+    </form>
+</template>
+
+<template name="videoList">
+    <li>
+        <h3>
+            {{title}}
+        </h3>
+        <iframe 
+            width="560" 
+            height="315" 
+            src={{url}}
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" r
+            eferrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen>
+        </iframe>
+        <p>
+            {{description}}
+        </p>
+    </li>
+</template>
