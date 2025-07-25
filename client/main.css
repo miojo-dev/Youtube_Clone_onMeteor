@@ -1,10 +1,24 @@
 :root {
   --main-dark: #0b0a07ff;
   --secondary-dark: #40434dff;
+  --secondary-darker: rgb(47, 50, 59);
   --accent-dark: #e71d36ff;
   --main-light: #f1f7edff;
   --accent-light: #db3a34ff;
+  --font-1: 'Franklin Gothic Medium', Arial, sans-serif;
+  --font-2: 'Arial Narrow', Arial, sans-serif;
+}
 
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.default {
+  color: var(--main-light);
+  font-size: large;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 body {
@@ -12,6 +26,62 @@ body {
   accent-color: var(--accent-dark);
   color: var(--main-light);
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+header {
+  background-color: var(--secondary-darker);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header > div {
+  background-color: var(--secondary-darker);
+  display: flex;
+  align-items: center;
+  gap: 50vw;
+}
+
+header > div > h1 {
+  margin: .5rem;
+}
+
+input, textarea {
+  background-color: transparent;
+  border: 2px solid var(--secondary-dark);
+  border-radius: 1rem;
+  padding: .5rem;
+}
+
+.submit {
+  left: 50%;
+  margin: .5rem;
+  height: 5rem;
+  width: 6rem;
+  display: flex;
+  gap: .5rem;
+}
+
+.submit > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: .5;
+}
+
+.submit > div > button {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  width: 100%;
+  border-radius: 1rem;
+  color: var(--accent-dark);
+  font-size: xx-large;
+  background-color: var(--secondary-dark);
+}
+
+.submit > div > button > label {
+  margin-top: 6px;
 }
 
 /*.light-mode {

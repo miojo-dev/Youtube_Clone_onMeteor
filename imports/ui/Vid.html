@@ -1,23 +1,30 @@
 <template name="addVideo">
-    <form action="">
-        <input type="text" placeholder="Insert your link/URL here" required>
-        <input type="text" placeholder="Insert the title" required>
-        <input type="text" placeholder="Insert the description" required>
-        <button type="submit" class="submit">
-            <img src="../assets/youtube_activity_64dp_E71D36FF_FILL0_wght400_GRAD0_opsz48.png" alt="Add Video">
-        </button>
+    <form class="submit">
+        <div>
+            <input type="text" placeholder="Insert your link/URL here" required>
+            <input type="text" placeholder="Insert the description" required>
+        </div>
+        <div>
+            <input type="text" placeholder="Insert the title" required>
+            <button class="material-symbols-outlined" type="submit">
+                youtube_activity 
+                <label class="default" for="button">
+                    Add Video
+                </label>
+            </button>
+        </div>
     </form>
 </template>
 
 <template name="videoList">
     <li>
         <h3>
-            {{title}}
+            {{getTitle}}
         </h3>
         <iframe 
             width="560" 
             height="315" 
-            src={{url}}
+            src={{getURL}}
             title="YouTube video player" 
             frameborder="0" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" r
@@ -25,7 +32,7 @@
             allowfullscreen>
         </iframe>
         <p>
-            {{description}}
+            {{getDescription}}
         </p>
     </li>
 </template>

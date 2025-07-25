@@ -15,11 +15,23 @@ Template.addVideo.events ({
         const Title = title.replace(/^./, c => c.toUpperCase());
         const Description = description.replace(/^./, c => c.toUpperCase());
 
-        Meteor.call();
+        Meteor.call('vids.insert', url , Title, Description);
         
         target.url.value = '';
         target.title.value = '';
         target.description.value = '';
-    }
+    },
     
+});
+
+Template.videoList.helpers ({
+    getURL() {
+        return url;
+    },
+    getTitle() {
+        return Meteor.call(title);
+    },
+    getDescription() {
+        return Description
+    },
 });
