@@ -16,6 +16,8 @@ Template.addVideo.events ({
         const Title = title.replace(/^./, c => c.toUpperCase());
         const Description = description.replace(/^./, c => c.toUpperCase());
 
+
+
         Meteor.call('vids.insert', idVidYT , Title, Description);
         
         target.idVidYT.value = '';
@@ -24,3 +26,11 @@ Template.addVideo.events ({
     },
     
 });
+
+Template.videoListItem.helpers({
+    link: () => {
+        const idVidYT = Template.instance().data.idVidYT
+        
+        return `https://www.youtube.com/embed/${idVidYT}`
+    }
+})
