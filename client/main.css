@@ -94,7 +94,8 @@ li > div {
 }
 
 .video-display {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: .5rem;
 }
 

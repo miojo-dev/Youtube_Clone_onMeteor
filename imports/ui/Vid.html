@@ -18,9 +18,11 @@
 
 <template name="videoListItem">
     <li>
-        <h3>
-            {{title}}
-        </h3>
+        <div>
+            <h3>
+                {{title}}
+            </h3>
+        </div>
         <div class="video-display">
             <iframe 
                 width="560" 
@@ -33,14 +35,14 @@
                 allowfullscreen
             >
             </iframe>
-            <div>
-                <p>
-                    {{description}}
-                </p>
-                <button class="remove" type="button">
-                    &times; Remove Video
-                </button>
-            </div>
         </div>
+        <div>
+            <p>
+                {{description}}
+            </p>
+            <button class="remove" type="button">
+                &times; Remove Video
+            </button>
+            </div>
     </li>
 </template>

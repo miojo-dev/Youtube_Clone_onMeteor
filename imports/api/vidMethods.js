@@ -16,9 +16,10 @@ Meteor.methods({
         });
     },
 
-    async 'tasks.remove' (vidId) {
+    async 'vids.remove' (vidId) {
         check(vidId, String);
 
+        console.log(vidId);
 
         const vid = await VidCollection.findOneAsync({_id: vidId});
 

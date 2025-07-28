@@ -34,3 +34,9 @@ Template.videoListItem.helpers({
         return `https://www.youtube.com/embed/${idVidYT}`
     }
 })
+
+Template.videoListItem.events ({
+    "click .remove" (event, instance) {
+        Meteor.call('vids.remove', this._id)
+    }
+})
