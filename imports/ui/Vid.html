@@ -18,31 +18,45 @@
 
 <template name="videoListItem">
     <li>
-        <div>
-            <h3>
-                {{title}}
-            </h3>
-        </div>
-        <div class="video-display">
-            <iframe 
-                width="560" 
-                height="315" 
-                src={{link}}
-                title="YouTube video player" 
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                referrerpolicy="strict-origin-when-cross-origin" 
-                allowfullscreen
-            >
-            </iframe>
-        </div>
-        <div>
-            <p>
-                {{description}}
-            </p>
-            <button class="remove" type="button">
-                &times; Remove Video
-            </button>
+        <h3>
+            {{title}}
+        </h3>
+        <div class="video-content">
+            <div class="video-display">
+                <iframe 
+                    width="560" 
+                    height="315" 
+                    src={{link}}
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen
+                >
+                </iframe>
             </div>
+            <div class="vid-details">
+                <p>
+                    {{description}}
+                </p>
+                <div class="buttons">
+                    <button id="deslike" type="button">
+                        deslike
+                    </button>
+                    <label for="deslike">
+                        {{deslike}}
+                    </label>
+                    <button id="like" type="button">
+                        like
+                    </button>
+                    <label for="like">
+                        {{like}}
+                    </label>
+                    <button class="remove" type="button">
+                        &times; Remove Video
+                    </button>
+                </div>
+            </div>
+        </div>
     </li>
 </template>

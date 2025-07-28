@@ -36,7 +36,7 @@ Template.videoListItem.helpers({
 })
 
 Template.videoListItem.events ({
-    "click .remove" (event, instance) {
+    "click .remove" () {
         Meteor.call('vids.remove', this._id)
     }
 })
