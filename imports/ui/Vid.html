@@ -1,11 +1,11 @@
 <template name="addVideo">
-    <form class="submit">
+    <form id="submit" class="submit">
         <div>
-            <input type="text" placeholder="Insert your link/URL here" required>
-            <input type="text" placeholder="Insert the description" required>
+            <input type="text" name="idVidYT" placeholder="Insert the video ID here" required>
+            <input type="text" name="title" placeholder="Insert the description" required>
         </div>
         <div>
-            <input type="text" placeholder="Insert the title" required>
+            <input type="text" name="description" placeholder="Insert the title" required>
             <button class="material-symbols-outlined" type="submit">
                 youtube_activity 
                 <label class="default" for="button">
@@ -16,23 +16,24 @@
     </form>
 </template>
 
-<template name="videoList">
+<template name="videoListItem">
     <li>
         <h3>
-            {{getTitle}}
+            {{title}}
         </h3>
         <iframe 
             width="560" 
             height="315" 
-            src={{getURL}}
+            src="https://www.youtube.com/embed/{{idVidYT}}"
             title="YouTube video player" 
             frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" r
-            eferrerpolicy="strict-origin-when-cross-origin" 
-            allowfullscreen>
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen
+        >
         </iframe>
         <p>
-            {{getDescription}}
+            {{description}}
         </p>
     </li>
 </template>

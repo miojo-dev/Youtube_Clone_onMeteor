@@ -1,6 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { check } from 'meteor/check';
-import {VidCollection} from '../db/VidCollection';
+import { VidCollection } from '../db/VidCollection';
 
 Meteor.methods({
     async 'vids.insert' (url, title, description) {
@@ -16,5 +16,18 @@ Meteor.methods({
         });
 
         return console.log(result)
+    },
+
+    async 'tasks.remove' (vidId) {
+        check(vidId, String);
+
+
+        const vid = await VidCollection.findOneAsync({_id: vidId});
+
+        if (!vid) {
+            throw new Meteor.Error("Video not found");
+        }
+
+        VidCollection.removeAsync(vidId);
     }
 })

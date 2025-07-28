@@ -4,34 +4,23 @@ import { Template } from 'meteor/templating';
 import './Vid.html'
 
 Template.addVideo.events ({
-    "submit .submit" (event) {
+    "submit #submit" (event) {
         event.preventDefault();
 
         const target = event.target;
-        const url = target.url.value;
+        
+        const idVidYT = target.idVidYT.value;
         const title = target.title.value;
         const description = target.description.value;
 
         const Title = title.replace(/^./, c => c.toUpperCase());
         const Description = description.replace(/^./, c => c.toUpperCase());
 
-        Meteor.call('vids.insert', url , Title, Description);
+        Meteor.call('vids.insert', idVidYT , Title, Description);
         
-        target.url.value = '';
+        target.idVidYT.value = '';
         target.title.value = '';
         target.description.value = '';
     },
     
-});
-
-Template.videoList.helpers ({
-    getURL() {
-        return url;
-    },
-    getTitle() {
-        return Meteor.call(title);
-    },
-    getDescription() {
-        return Description
-    },
 });
