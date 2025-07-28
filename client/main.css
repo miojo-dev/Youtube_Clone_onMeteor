@@ -84,6 +84,32 @@ input, textarea {
   margin-top: 6px;
 }
 
+li {
+  width: 100%;
+}
+
+li > div {
+  height: 100%;
+  width: 100%;
+}
+
+.video-display {
+  display: flex;
+  gap: .5rem;
+}
+
+.remove {
+  padding: .5rem;
+  font-size: large;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  width: 100%;
+  border-radius: 1rem;
+  color: var(--accent-dark);
+  background-color: var(--secondary-dark);
+}
+
 /*.light-mode {
   background-color: var(--main-light);
   color: var(--mid-grey);
