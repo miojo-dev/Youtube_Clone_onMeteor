@@ -1,17 +1,34 @@
 import { Template } from 'meteor/templating'
+import { VidCollection } from '../db/VidCollection';
+
 import './Vid.html'
 import "./App.html"
 
-import { VidCollection } from '../db/VidCollection';
-
 Template.app.onCreated(function app() {
-  const handler = Meteor.subscribe('videos');
+  const template = this
+  template.search = new ReactiveVar();
+
+  Tracker.autorun(() => {
+    const search = template.search.get();
+    Meteor.subscribe('videos', search);
+  });
+})
+
+Template.app.events({
+  "input [name=search]" (event, template) {
+
+    const target = event.target;
+
+    const search = target.value;
+
+    template.search.set(search)
+  }
 })
 
 Template.app.helpers({
   videos: () => {
-    const videos = VidCollection.find({}, {sort: {createdAt: -1}}).fetch()
 
-    return videos
+    return VidCollection.find({}, {sort: {createdAt: -1}})
+    
   }
 })
