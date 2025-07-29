@@ -18,7 +18,7 @@ Template.addVideo.events ({
 
 
 
-        Meteor.call('vids.insert', idVidYT , Title, Description);
+        Meteor.call('vids.insert', idVidYT , Title, Description, 0, 0);
         
         target.idVidYT.value = '';
         target.title.value = '';
@@ -38,5 +38,13 @@ Template.videoListItem.helpers({
 Template.videoListItem.events ({
     "click .remove" () {
         Meteor.call('vids.remove', this._id)
+    },
+
+    "click #deslike" () {
+        Meteor.call('vids.deslike', this._id)
+    },
+
+    "click #like" () {
+        Meteor.call('vids.like', this._id)
     }
 })

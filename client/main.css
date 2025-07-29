@@ -28,6 +28,10 @@ body {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+button {
+  cursor: pointer;
+}
+
 header {
   background-color: var(--secondary-darker);
   display: flex;
@@ -112,10 +116,15 @@ input, textarea {
 
 .submit > div > button > label {
   margin-top: 6px;
+  cursor: pointer;
 }
 
 main {
   margin: 1.5rem;
+}
+
+ul {
+  list-style-type: none;
 }
 
 li {
@@ -149,17 +158,28 @@ li > div {
 }
 
 .buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  gap: .3rem;
+}
+
+.votes {
   display: flex;
+  justify-content: space-around;
 }
 
 #deslike {
+  font-size: xx-large;
   color: red;
   border: red solid 1px;
+  background-color: var(--secondary-dark);
 }
 
 #like {
+  font-size: xx-large;
   color: green;
   border: green solid 1px;
+  background-color: var(--secondary-dark);
 }
 
 .remove {

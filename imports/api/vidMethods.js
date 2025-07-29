@@ -26,5 +26,37 @@ Meteor.methods({
         }
 
         VidCollection.removeAsync(vidId);
+    },
+
+    async 'vids.deslike' (vidId) {
+        check(vidId, String);
+
+        const vid = await VidCollection.findOneAsync({_id: vidId});
+
+        if (!vid) {
+            throw new Meteor.Error("Video not found");
+        }
+
+        VidCollection.updateAsync({
+            _id: vidId
+        }, {
+            $inc: { deslike: 1 }
+        })
+    },
+
+    async 'vids.like' (vidId) {
+        check(vidId, String);
+
+        const vid = await VidCollection.findOneAsync({_id: vidId});
+
+        if (!vid) {
+            throw new Meteor.Error("Video not found");
+        }
+
+        VidCollection.updateAsync({
+            _id: vidId
+        }, {
+            $inc: { like: 1 }
+        })
     }
 })
