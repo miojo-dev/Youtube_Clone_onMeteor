@@ -29,8 +29,6 @@ Template.app.events({
 
 Template.app.helpers({
   videos: () => {
-
     return VidCollection.find({}, {sort: {createdAt: -1}})
-    
   }
 })

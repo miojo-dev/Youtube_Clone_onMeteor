@@ -41,18 +41,22 @@
                 </p>
                 <div class="buttons">
                     <div class="votes">
-                        <button id="deslike" type="button">
-                            &darr;
-                        </button>
-                        <label for="deslike">
-                            {{deslike}}
-                        </label>
-                        <button id="like" type="button">
-                            &uarr;
-                        </button>
-                        <label for="like">
-                            {{like}}
-                        </label>
+                        <div id="deslike_container">
+                            <button id="deslike" type="button">
+                                &darr;
+                            </button>
+                            <label for="deslike">
+                                {{deslike}}
+                            </label>
+                        </div>
+                        <div id="like_container">
+                            <button id="like" type="button">
+                                &uarr;
+                            </button>
+                            <label for="like">
+                                {{like}}
+                            </label>
+                        </div>
                     </div>
                     <button class="remove" type="button">
                         &times; Remove Video
@@ -60,6 +64,21 @@
                 </div>
             </div>
         </div>
-        {{> coment_item _id = _id}}
+        <div class="coments">
+            <button class="show-coments">
+                {{#if show}}
+                    Show coments
+                {{else}}
+                    Hide coments
+                {{/if}}
+            </button>
+            {{#if show}}
+                <div>
+                    {{> coment_item _id = _id}}
+                </div>
+            {{else}}
+
+            {{/if}}
+        </div>
     </li>
 </template>

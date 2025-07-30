@@ -21,11 +21,16 @@
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+html {
+  min-width: 939px;
+}
+
 body {
   background-color: var(--main-dark);
   accent-color: var(--accent-dark);
   color: var(--main-light);
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  min-width: 850px;
 }
 
 button {
@@ -35,7 +40,10 @@ button {
 header {
   background-color: var(--secondary-darker);
   display: flex;
-  justify-content: space-between;
+  position: fixed;
+  top: 0%;
+  width: 100%;
+  box-shadow: 0 0 1rem .5rem var(--main-dark);
 }
 
 header > div {
@@ -51,6 +59,7 @@ header > div > h1 {
 .search {
   border: var(--secondary-dark) solid 2px;
   border-radius: 20px;
+  justify-self: center;
 }
 
 .search > form > input{
@@ -63,13 +72,6 @@ header > div > h1 {
 
 .search:focus-within {
   outline: var(--main-light) solid 1px;
-}
-
-.search > form > button {
-  margin-right: 5px;
-  background-color: transparent;
-  border: none;
-  color: var(--accent-light);
 }
 
 input, textarea {
@@ -121,6 +123,7 @@ input, textarea {
 
 main {
   margin: 1.5rem;
+  margin-top: 8rem;
 }
 
 ul {
@@ -135,6 +138,10 @@ li {
 li > div {
   height: 100%;
   width: 100%;
+}
+
+iframe {
+  border-radius: 1rem;
 }
 
 .video-display {
@@ -166,6 +173,17 @@ li > div {
 .votes {
   display: flex;
   justify-content: space-around;
+  align-items: center;
+}
+
+.votes  > div > label {
+  margin: .5rem;
+  margin-right: 1rem;
+}
+
+#deslike_container {
+  background-color: var(--secondary-dark);
+  border-radius: 1rem;
 }
 
 #deslike {
@@ -173,6 +191,21 @@ li > div {
   color: red;
   border: red solid 1px;
   background-color: var(--secondary-dark);
+  width: 3rem;
+  height: 3rem;
+  padding-bottom: .2rem;
+  border-radius: 1rem;
+  transition: .3s;
+}
+
+#deslike:hover {
+  transition: .5s;
+  box-shadow: red 0 0 1rem inset;
+}
+
+#like_container {
+  background-color: var(--secondary-dark);
+  border-radius: 1rem;
 }
 
 #like {
@@ -180,6 +213,16 @@ li > div {
   color: green;
   border: green solid 1px;
   background-color: var(--secondary-dark);
+  width: 3rem;
+  height: 3rem;
+  padding-bottom: .2rem;
+  border-radius: 1rem;
+  transition: .3s;
+}
+
+#like:hover {
+  transition: .5s;
+  box-shadow: green 0 0 1rem inset;
 }
 
 .remove {
@@ -199,4 +242,66 @@ li > div {
 .remove:hover {
   box-shadow: 0 0 1rem var(--accent-dark) ;
   transition: .3s;
+}
+
+.coments {
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  justify-self: center;
+}
+
+.show-coments {
+  border: var(--secondary-dark) solid 2px;
+  border-radius: 1rem;
+  padding: .5rem;
+  background-color: var(--secondary-darker);
+  color: var(--main-light);
+}
+
+.messages {
+  background-color: var(--secondary-darker);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: .5rem;
+}
+
+.messages > h4{
+  margin: 1rem;
+  padding-bottom: 3px;
+  border-bottom: var(--secondary-dark) solid 2px;
+}
+
+.msg_vw {
+  background-color: var(--secondary-dark);
+  border-radius: 1rem;
+  margin: 8px;
+  padding: .3rem 0 .3rem .5rem;
+  width: calc(100% - 1.5rem);
+}
+
+.send_msg {
+  border: var(--secondary-dark) solid 2px;
+  border-radius: 1rem;
+  display: grid;
+  grid-template-columns: 7fr 1fr;
+}
+
+.send_msg > input {
+  border: none;
+}
+
+.send_msg > input:focus {
+  outline: none;
+}
+
+.send {
+  margin-right: 5px;
+  background-color: transparent;
+  border: none;
+  color: var(--main-light);
 }

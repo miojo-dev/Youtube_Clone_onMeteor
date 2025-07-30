@@ -1,19 +1,19 @@
 <template name="coment_item">
-    <div>
+    <div class="messages">
         <h4>
             Coments
         </h4>
         <ul>
             {{#each coments}}
-                <li>
+                <li class="msg_vw">
                     {{text}}
                 </li>
             {{/each}}
         </ul>
         
-        <form id="submit">
+        <form class="send_msg" id="submit">
             <input name="text" type="text">
-            <button type="submit">
+            <button class="send" type="submit">
                 Send &rarr;
             </button>
         </form>

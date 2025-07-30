@@ -23,16 +23,20 @@ Template.addVideo.events ({
         target.idVidYT.value = '';
         target.title.value = '';
         target.description.value = '';
-    },
-    
+    }    
 });
+
+Template.videoListItem.onCreated(function videoListItem() {
+    this.show = new ReactiveVar(false);
+})
 
 Template.videoListItem.helpers({
     link: () => {
         const idVidYT = Template.instance().data.idVidYT
         
         return `https://www.youtube.com/embed/${idVidYT}`
-    }
+    },
+    show: () => Template.instance().show.get()
 })
 
 Template.videoListItem.events ({
@@ -46,5 +50,8 @@ Template.videoListItem.events ({
 
     "click #like" () {
         Meteor.call('vids.like', this._id)
+    },
+    "click .show-coments" (event, template) {
+        template.show.set(!template.show.get())
     }
 })
