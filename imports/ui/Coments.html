@@ -1,0 +1,21 @@
+<template name="coment_item">
+    <div>
+        <h4>
+            Coments
+        </h4>
+        <ul>
+            {{#each coments}}
+                <li>
+                    {{text}}
+                </li>
+            {{/each}}
+        </ul>
+        
+        <form id="submit">
+            <input name="text" type="text">
+            <button type="submit">
+                Send &rarr;
+            </button>
+        </form>
+    </div>
+</template>

@@ -12,6 +12,8 @@ Template.app.onCreated(function app() {
     const search = template.search.get();
     Meteor.subscribe('videos', search);
   });
+
+  Meteor.subscribe('coments');
 })
 
 Template.app.events({

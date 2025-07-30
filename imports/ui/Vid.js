@@ -1,7 +1,7 @@
-import { Meteor } from 'meteor/meteor'
+import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 
-import './Vid.html'
+import './Vid.html';
 
 Template.addVideo.events ({
     "submit #submit" (event) {
