@@ -172,18 +172,19 @@ iframe {
 
 .votes {
   display: flex;
-  justify-content: space-around;
   align-items: center;
 }
 
 .votes  > div > label {
-  margin: .5rem;
-  margin-right: 1rem;
+  margin: 1rem;
 }
 
 #deslike_container {
   background-color: var(--secondary-dark);
   border-radius: 1rem;
+  display: flex;
+  flex-direction: row;
+  margin-right: .5rem;
 }
 
 #deslike {
@@ -206,6 +207,9 @@ iframe {
 #like_container {
   background-color: var(--secondary-dark);
   border-radius: 1rem;
+  display: flex;
+  flex-direction: row;
+  margin-right: 1rem;
 }
 
 #like {
