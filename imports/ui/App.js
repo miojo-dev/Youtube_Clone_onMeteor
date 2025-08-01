@@ -7,6 +7,7 @@ import "./App.html"
 Template.app.onCreated(function app() {
   const template = this
   template.search = new ReactiveVar();
+  template.showForm = new ReactiveVar();
 
   Tracker.autorun(() => {
     const search = template.search.get();
@@ -24,11 +25,15 @@ Template.app.events({
     const search = target.value;
 
     template.search.set(search)
+  },
+
+  "click .dropdown" (event, template) {
+    template.showForm.set(!template.showForm.get())
+    console.log('teste', template.showForm.get());
   }
 })
 
 Template.app.helpers({
-  videos: () => {
-    return VidCollection.find({}, {sort: {createdAt: -1}})
-  }
+  videos: () => VidCollection.find({}, {sort: {createdAt: -1}}),
+  ShowForm: () => Template.instance().showForm.get()
 })

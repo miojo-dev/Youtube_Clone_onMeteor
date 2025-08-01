@@ -1,19 +1,55 @@
 <template name="app">
-    <header>
-        <div>
-            <h1>
-                CloneTube
-            </h1>
-            <div class="search">
-                <form>
-                    <input name="search" type="text" placeholder="Type to search...">
-                </form>
+    <header class="shadow">
+        <div id="hider">
+            <div id="main-menu">
+                <h1>
+                    CloneTube
+                </h1>
+                <div class="search">
+                    <form>
+                        <input name="search" type="text" placeholder="Type to search...">
+                    </form>
+                </div>
+                <div class="item-desktop">
+                    {{> addVideo}}
+                </div>
             </div>
-            <div>
-                {{> addVideo}}
+            <div class="item-mobile dropdown">
+                {{#if ShowForm}}
+                    <div>
+                        {{> addVideo}}
+                    </div>
+                {{else}}
+
+                {{/if}}
+                <div id="drop-arrow">
+                    {{#if ShowForm}}
+                        <div id="arrow-down">
+                            <label>
+                                ⌄
+                            </label>
+                        </div>
+                    {{else}}
+                        <div id="arrow-up">
+                            <label>
+                                ⌃
+                            </label>
+                        </div>
+                    {{/if}}
+                </div>
             </div>
         </div>
+        {{#if ShowForm}}
+            <div id="arrow-detail-down"></div>
+        {{else}}
+            <div id="arrow-detail-up"></div>
+        {{/if}}
     </header>
+    {{#if ShowForm}}
+        <div class="shadow"></div>
+    {{else}}
+        <div class="shadow"></div>
+    {{/if}}
     <main>
         <h2>
             Videos:

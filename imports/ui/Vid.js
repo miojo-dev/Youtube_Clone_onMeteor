@@ -28,6 +28,7 @@ Template.addVideo.events ({
 
 Template.videoListItem.onCreated(function videoListItem() {
     this.show = new ReactiveVar(false);
+    this.intervalId = null;
 })
 
 Template.videoListItem.helpers({
@@ -44,13 +45,29 @@ Template.videoListItem.events ({
         Meteor.call('vids.remove', this._id)
     },
 
-    "click #deslike" () {
-        Meteor.call('vids.deslike', this._id)
+    //'click #deslike' () {
+    //    Meteor.call('vids.deslike', this.id)
+    //},
+
+    "mousedown #deslike, touchstart #deslike" (event, instance) {
+        if (instance.intervalId) return;
+
+        instance.intervalId = setInterval(() => {
+            Meteor.call('vids.deslike', instance.data._id)
+        }, 100);
+    },
+
+    'mouseup #deslike, mouseleave #deslike, touchend #deslike' (event, instance) {
+        if (instance.intervalId) {
+        clearInterval(instance.intervalId);
+        instance.intervalId = null;
+        }
     },
 
     "click #like" () {
         Meteor.call('vids.like', this._id)
     },
+
     "click .show-coments" (event, template) {
         template.show.set(!template.show.get())
     }
