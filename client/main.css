@@ -450,23 +450,27 @@ iframe {
   }
 
   #arrow-detail-up {
+    display: flex;
     justify-self: center;
     border: var(--secondary-dark) solid 3px;
     border-radius: 10rem;
     height: 2rem;
     width: 2rem !important;
-    position: fixed;
+    position: absolute;
     top: 6.84rem;
+    z-index: 9;
   }
 
   #arrow-detail-down {
+    display: flex;
     justify-self: center;
     border: var(--secondary-dark) solid 3px;
     border-radius: 10rem;
     height: 2rem;
     width: 2rem !important;
-    position: fixed;
+    position: absolute;
     top: 12.3rem;
+    z-index: 9;
   }
 
   main {
@@ -476,5 +480,13 @@ iframe {
   .buttons {
     display: flex;
     flex-direction: column;
+  }
+
+  .coments {
+    width: 100%;
+  }
+  
+  .messages {
+    width: 100%;
   }
 }
