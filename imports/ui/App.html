@@ -1,6 +1,45 @@
 <template name="app">
     <header class="shadow">
-        <div id="hider">
+        <div class="item-mobile">
+            <div id="hider">
+                <div id="main-menu">
+                    <h1>
+                        CloneTube
+                    </h1>
+                    <div class="search">
+                        <form>
+                            <input name="search" type="text" placeholder="Type to search...">
+                        </form>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    {{#if ShowForm}}
+                        <div>
+                            {{> addVideo}}
+                        </div>
+                    {{/if}}
+                    <div id="center-arrow">
+                        <div id="drop-arrow">
+                            {{#if ShowForm}}
+                                <div id="arrow-down">
+                                    <label>
+                                        ⌄
+                                    </label>
+                                </div>
+                            {{else}}
+                                <div id="arrow-up">
+                                    <label>
+                                        ⌃
+                                    </label>
+                                </div>
+                            {{/if}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="item-desktop">
             <div id="main-menu">
                 <h1>
                     CloneTube
@@ -10,32 +49,8 @@
                         <input name="search" type="text" placeholder="Type to search...">
                     </form>
                 </div>
-                <div class="item-desktop">
+                <div id="aling-form">
                     {{> addVideo}}
-                </div>
-            </div>
-            <div class="item-mobile dropdown">
-                {{#if ShowForm}}
-                    <div>
-                        {{> addVideo}}
-                    </div>
-                {{else}}
-
-                {{/if}}
-                <div id="drop-arrow">
-                    {{#if ShowForm}}
-                        <div id="arrow-down">
-                            <label>
-                                ⌄
-                            </label>
-                        </div>
-                    {{else}}
-                        <div id="arrow-up">
-                            <label>
-                                ⌃
-                            </label>
-                        </div>
-                    {{/if}}
                 </div>
             </div>
         </div>
