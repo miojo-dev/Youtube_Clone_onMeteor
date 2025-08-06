@@ -62,7 +62,7 @@ header {
 
 #main-menu {
   background-color: var(--secondary-darker);
-  display: flex;
+  display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   justify-content: space-between; 
   width: 100%;
@@ -92,6 +92,12 @@ header {
   outline: var(--main-light) solid 1px;
 }
 
+.aling-form {
+  width: 100%;
+  display: flex;
+  justify-self: end;
+}
+
 input, textarea {
   color: var(--main-light);
   background-color: transparent;
@@ -106,6 +112,7 @@ input, textarea {
   height: 5rem;
   display: flex;
   gap: .5rem;
+  justify-content: end;
 }
 
 .submit > div {
@@ -372,6 +379,7 @@ iframe {
 
   .search {
     margin-bottom: -1rem;
+    width: calc(100% - 4rem);
   }
 
   #drop-form {
@@ -458,7 +466,7 @@ iframe {
     width: 2rem !important;
     position: absolute;
     top: 6.84rem;
-    z-index: 9;
+    z-index: -9 !important;
   }
 
   #arrow-detail-down {
@@ -470,7 +478,30 @@ iframe {
     width: 2rem !important;
     position: absolute;
     top: 12.3rem;
-    z-index: 9;
+    z-index: -9 !important;
+  }
+
+  #shadow-up {
+    display: flex;
+    justify-self: center;
+    border: var(--secondary-dark) solid 3px;
+    border-radius: 10rem;
+    height: 2rem;
+    width: 2rem !important;
+    position: fixed;
+    top: 6.84rem;
+    z-index: -9 !important;
+  }
+
+  #shadow-down {
+    display: flex;
+    justify-self: center;
+    border-radius: 10rem;
+    height: 2rem;
+    width: 2rem !important;
+    position: fixed;
+    top: 12.3rem;
+    z-index: -9 !important;
   }
 
   main {
